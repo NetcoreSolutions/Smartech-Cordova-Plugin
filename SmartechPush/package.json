@@ -1,0 +1,37 @@
+{
+  "name": "smartech-push-cordova",
+  "version": "3.5.1",
+  "description": "Smartech Push Plugin for Cordova Project.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "yarn run build",
+    "build": "tsc"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "push notification",
+    "fcm",
+    "push",
+    "messaging"
+  ],
+  "cordova": {
+    "id": "smartech-push-cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin.git"
+  },
+  "author": "Netcore Solutions",
+  "bugs": {
+    "url": "https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin/issues"
+  },
+  "homepage": "https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin/issues#readme",
+  "license": "ISC"
+}

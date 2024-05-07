@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="smartech-appinbox-cordova" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SmartechAppInbox</name>
+
+    <js-module name="SmartechAppInboxPlugin" src="dist/index.js">
+        <clobbers target="SmartechAppInboxCordova" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SmartechAppInboxCordova">
+                <param name="ios-package" value="SmartechAppInboxCordova" />
+                 <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/SmartechAppInboxCordova.h" />
+        <source-file src="src/ios/SmartechAppInboxCordova.m" />
+        
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="SmartechAppInbox-iOS-SDK" spec="3.5.1" />
+            </pods>
+        </podspec>
+
+    </platform>
+
+    <platform name="android">
+     <framework src="com.netcore.android:smartech-appinbox:3.5.0" />
+    <framework src="build.extras-smartechappinbox.gradle" custom="true" type="gradleReference" />
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SmartechAppInboxCordova">
+                <param name="android-package" value="com.netcore.cordova.SmartechAppInboxCordova" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/com/netcore/cordova/SmartechAppInboxCordova.java"
+            target-dir="src/com/netcore/cordova/" />
+
+            <source-file src="src/android/com/netcore/cordova/SmartechAppInboxCallbackHelper.java"
+            target-dir="src/com/netcore/cordova/" />
+    </platform>
+</plugin>

@@ -1,0 +1,7 @@
+{
+  "name": "SmartechCordovaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

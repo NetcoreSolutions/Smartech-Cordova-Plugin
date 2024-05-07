@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="smartech-base-cordova" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SmartechBase</name>
+
+    <js-module name="SmartechBasePlugin" src="dist/index.js">
+        <clobbers target="SmartechBaseCordova" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SmartechBaseCordova">
+                <param name="ios-package" value="SmartechBaseCordova" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/SmartechBaseCordova.h" />
+        <source-file src="src/ios/SmartechBaseCordova.m" />
+
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="Smartech-iOS-SDK" spec="3.5.3" />
+            </pods>
+        </podspec>
+
+    </platform>
+
+    <platform name="android">
+     <framework src="com.netcore.android:smartech-sdk:3.5.0" />
+    <framework src="build.extras-smartech.gradle" custom="true" type="gradleReference" />
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SmartechBaseCordova">
+                <param name="android-package" value="com.netcore.cordova.SmartechBaseCordova" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/com/netcore/cordova/SmartechBaseCordova.java"
+            target-dir="src/com/netcore/cordova/" />
+                    <source-file src="src/android/com/netcore/cordova/CallbackHelper.java"
+            target-dir="src/com/netcore/cordova/" />
+            <source-file src="src/android/com/netcore/cordova/SmartechDeeplinkReceivers.java"
+            target-dir="src/com/netcore/cordova/" />
+             <source-file src="src/android/com/netcore/cordova/SmartechBasePlugin.java"
+            target-dir="src/com/netcore/cordova/" />
+             <source-file src="src/android/com/netcore/cordova/DeeplinkCallbackHandler.java"
+            target-dir="src/com/netcore/cordova/" />
+    </platform>
+
+</plugin>

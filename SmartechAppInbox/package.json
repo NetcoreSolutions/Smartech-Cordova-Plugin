@@ -1,0 +1,35 @@
+{
+  "name": "smartech-appinbox-cordova",
+  "version": "3.5.1",
+  "description": "Smartech AppInbox Plugin for Cordova Project.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "yarn run build",
+    "build": "tsc"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "app inbox",
+    "inbox"
+  ],
+  "cordova": {
+    "id": "smartech-appinbox-cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin.git"
+  },
+  "author": "Netcore Solutions",
+  "bugs": {
+    "url": "https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin/issues"
+  },
+  "homepage": "https://github.com/NetcoreSolutions/Smartech-Cordova-Plugin/issues#readme",
+  "license": "ISC"
+}

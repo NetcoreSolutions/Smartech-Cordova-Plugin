@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SmartechCordovaApp</string>
+    <string name="title_activity_main">SmartechCordovaApp</string>
+    <string name="package_name">com.netcore.smartechcordova</string>
+    <string name="custom_url_scheme">com.netcore.smartechcordova</string>
+    <string name="bg_location_permission">Background location permission</string>
+    <string name="bg_location_permission_description">For geofence feature background location permission needed. Please select location <b>Allow all the time</b> from settings.</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+</resources>

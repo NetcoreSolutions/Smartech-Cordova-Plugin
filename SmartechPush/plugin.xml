@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="smartech-push-cordova" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SmartechPush</name>
+
+    <js-module name="SmartechPushPlugin" src="dist/index.js">
+        <clobbers target="SmartechPushCordova" />
+    </js-module>
+    
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SmartechPushCordova">
+                <param name="ios-package" value="SmartechPushCordova" />
+                 <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/SmartechPushCordova.h" />
+        <source-file src="src/ios/SmartechPushCordova.m" />
+
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="SmartPush-iOS-SDK" spec="3.5.1" />
+            </pods>
+        </podspec>
+        
+    </platform>
+    
+    <platform name="android">
+    <framework src="com.netcore.android:smartech-push:3.5.0" />
+    <framework src="build.extras-smartechpush.gradle" custom="true" type="gradleReference" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SmartechPushCordova">
+                <param name="android-package" value="com.netcore.cordova.SmartechPushCordova" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/com/netcore/cordova/SmartechPushCordova.java"
+            target-dir="src/com/netcore/cordova/" />
+                    <source-file src="src/android/com/netcore/cordova/SmartPushCallbackHelper.java"
+            target-dir="src/com/netcore/cordova/" />
+    </platform>
+</plugin>

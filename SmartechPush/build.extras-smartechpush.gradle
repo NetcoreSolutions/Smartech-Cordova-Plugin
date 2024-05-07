@@ -1,0 +1,4 @@
+
+repositories {
+  maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
+}
